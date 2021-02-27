@@ -1,0 +1,9 @@
+<form method="POST" action="">
+    {% csrf_token %}
+    <p>{{form.name}}</p>
+    <p>{{form.price}}</p>
+    <p>{{form.availability}}</p>
+    <p>{{form.weight}}</p>
+    <p class="short-sub-form"><input type="submit" name="Create Product By Weight"></p>
+
+</form>
