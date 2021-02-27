@@ -1,0 +1,9 @@
+<h1>Products By Weight</h1>
+    <ul>
+        {% for productbyweight in object_list %}
+            <li>
+                <img class="thumbnail" src="{{ productbyweight.imageURL }}">
+                {{ productbyweight.name }} - {{ productbyweight.category }} - {{ productbyweight.price|floatformat:2 }} - {{ productbyweight.availability }} - {{ productbyweight.weight }}
+            </li>
+        {% endfor %}
+    </ul>
