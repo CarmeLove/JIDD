@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 
-from .models import Category, ProductByWeight, ProductByQuantity
+from .models import Category, ProductByWeight, ProductByQuantity, Product
 from .forms import CategoryForm, ProductByWeightForm, ProductByQuantityForm
 
 
@@ -36,3 +36,8 @@ class ProductByQuantityCreateView(CreateView):
     template_name = 'form_create_product_by_quantity.html'
     form_class = ProductByQuantityForm
     success_url = reverse_lazy('products_by_quantity')
+
+
+class ProductView(ListView):
+    template_name = 'products_other.html'
+    model = Product

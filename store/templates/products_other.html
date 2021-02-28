@@ -1,0 +1,10 @@
+<h1>Products</h1>
+<ul>
+    {% for product in object_list %}
+    <li>
+<!--        <img class="thumbnail" src="{{ product.imageURL }}">-->
+        {{ product.name }} - {{ product.category }} - {{ product.price|floatformat:2 }} -
+        {{ product.availability }} - {{ product.weight }} - {{ product.digital }}
+    </li>
+    {% endfor %}
+</ul>
