@@ -1,8 +1,14 @@
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 
 from .models import Category, ProductByWeight, ProductByQuantity, Product
 from .forms import CategoryForm, ProductByWeightForm, ProductByQuantityForm
+
+
+def store(request):
+    context = {}
+    return render(request, 'store.html', context)
 
 
 class CategoryView(ListView):
