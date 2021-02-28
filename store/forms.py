@@ -52,4 +52,5 @@ class ProductForm(ModelForm):
         fields = '__all__'
 
     name = CharField(widget=TextInput(attrs={'placeholder': 'Name of new product...'}),
+                     validators=[capitalized_validator],
                      max_length=70)
