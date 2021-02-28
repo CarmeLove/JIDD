@@ -12,4 +12,5 @@ urlpatterns = [
     path('products/other/', ProductView.as_view(), name='products_other'),
     path('products/other/create/', ProductCreateView.as_view(), name='create_products_other'),
     path('customers/', CustomerView.as_view(), name='customers'),
+    path('create_account/', CustomerCreateView.as_view(), name='create_customer'),
 ]

@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 
 from .models import Category, ProductByWeight, ProductByQuantity, Product, Customer
-from .forms import CategoryForm, ProductByWeightForm, ProductByQuantityForm, ProductForm
+from .forms import CategoryForm, ProductByWeightForm, ProductByQuantityForm, ProductForm, CustomerForm
 
 
 class CategoryView(ListView):
@@ -52,3 +52,15 @@ class ProductCreateView(CreateView):
 class CustomerView(ListView):
     template_name = 'customers.html'
     model = Customer
+
+
+"""CustomerCreateView is for customer, for now it can reverse customers as for Admin,
+    but later it has to be changed and reverse store-site or checkout"""
+
+
+class CustomerCreateView(CreateView):
+    template_name = 'form_create_customer.html'
+    form_class = CustomerForm
+    success_url = reverse_lazy('customers')
+
+
