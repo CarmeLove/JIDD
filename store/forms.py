@@ -3,6 +3,11 @@ from django.forms import *
 from .models import Category, ProductByWeight, ProductByQuantity, Product
 
 
+def capitalized_validator(value):
+    if value[0].islower():
+        raise ValidationError('Value must be capitalized.')
+
+
 class CategoryForm(ModelForm):
     class Meta:
         model = Category
@@ -32,6 +37,15 @@ class ProductByWeightForm(ModelForm):
 class ProductByQuantityForm(ModelForm):
     class Meta:
         model = ProductByQuantity
+        fields = '__all__'
+
+    name = CharField(widget=TextInput(attrs={'placeholder': 'Name of new product...'}),
+                     max_length=70)
+
+
+class ProductForm(ModelForm):
+    class Meta:
+        model = Product
         fields = '__all__'
 
     name = CharField(widget=TextInput(attrs={'placeholder': 'Name of new product...'}),
