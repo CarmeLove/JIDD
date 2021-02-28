@@ -1,6 +1,6 @@
 from django.forms import *
 
-from .models import Category, ProductByWeight
+from .models import Category, ProductByWeight, ProductByQuantity
 
 
 class CategoryForm(ModelForm):
@@ -27,3 +27,12 @@ class ProductByWeightForm(ModelForm):
 #
 #     def __str__(self):
 #         return self.name
+
+
+class ProductByQuantityForm(ModelForm):
+    class Meta:
+        model = ProductByQuantity
+        fields = '__all__'
+
+    name = CharField(widget=TextInput(attrs={'placeholder': 'Name of new product...'}),
+                     max_length=70)

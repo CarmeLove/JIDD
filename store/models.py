@@ -1,4 +1,4 @@
-from django.db.models import CharField, Model, DecimalField, ImageField, FloatField, ForeignKey, SET_NULL
+from django.db.models import CharField, Model, DecimalField, ImageField, FloatField, ForeignKey, SET_NULL, IntegerField
 
 
 class Category(Model):
@@ -19,6 +19,21 @@ class ProductByWeight(Model):
     category = ForeignKey(Category, on_delete=SET_NULL, null=True, blank=True)
     price = DecimalField(max_digits=6, decimal_places=2)
     availability = FloatField(null=False, blank=False)
+    weight = FloatField(null=True, blank=True)
+    image = ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class ProductByQuantity(Model):
+    class Meta:
+        verbose_name = 'Product By Quantity'
+        verbose_name_plural = 'Products By Quantity'
+    name = CharField(max_length=70)
+    category = ForeignKey(Category, on_delete=SET_NULL, null=True, blank=True)
+    price = DecimalField(max_digits=6, decimal_places=2)
+    availability = IntegerField(null=False, blank=False)
     weight = FloatField(null=True, blank=True)
     image = ImageField(null=True, blank=True)
 

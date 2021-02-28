@@ -7,4 +7,5 @@ urlpatterns = [
     path('categories/create/', CategoryCreateView.as_view(), name='create_category'),
     path('products/by_weight/', ProductByWeightView.as_view(), name='products_by_weight'),
     path('products/by_weight/create/', ProductByWeightCreateView.as_view(), name='create_product_by_weight'),
+    path('products/by_quantity/', ProductByQuantityView.as_view(), name='products_by_quantity'),
 ]
