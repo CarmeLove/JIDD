@@ -1,0 +1,8 @@
+<h1>Order items</h1>
+<ul>
+    {% for orderitem in object_list %}
+    <li>
+        Transaction id: {{ orderitem.order }} - Product: {{ orderitem.product_by_weight }} - Quantity: {{ orderitem.quantity }} - Date added: {{ orderitem.date_added }}
+    </li>
+    {% endfor %}
+</ul>

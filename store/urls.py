@@ -14,4 +14,5 @@ urlpatterns = [
     path('customers/', CustomerView.as_view(), name='customers'),
     path('create_account/', CustomerCreateView.as_view(), name='create_customer'),
     path('orders/', OrderView.as_view(), name='orders'),
+    path('orders/<pk>/items/', OrderItemView.as_view(), name='order_items'),
 ]
