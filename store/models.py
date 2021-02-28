@@ -122,9 +122,9 @@ Have to find solution to add different products and kinds of quantities."""
 
 
 class OrderItem(Model):
-    product_by_weight = ForeignKey(ProductByWeight, on_delete=SET_NULL, null=True, blank=True)
+    product = ForeignKey(Product, on_delete=SET_NULL, null=True, blank=True)
     order = ForeignKey(Order, on_delete=SET_NULL, null=True, blank=True)
-    quantity = FloatField(default=0, null=True, blank=True)
+    quantity = IntegerField(default=0, null=True, blank=True)
     date_added = DateTimeField(auto_now_add=True)
 
     def __str__(self):
