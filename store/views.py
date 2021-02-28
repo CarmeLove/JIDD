@@ -30,3 +30,9 @@ class ProductByWeightCreateView(CreateView):
 class ProductByQuantityView(ListView):
     template_name = 'products_by_quantity.html'
     model = ProductByQuantity
+
+
+class ProductByQuantityCreateView(CreateView):
+    template_name = 'form_create_product_by_quantity.html'
+    form_class = ProductByQuantityForm
+    success_url = reverse_lazy('products_by_quantity')
