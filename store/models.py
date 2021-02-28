@@ -1,5 +1,15 @@
+from django.contrib.auth.models import User
 from django.db.models import CharField, Model, DecimalField, ImageField, FloatField, ForeignKey, SET_NULL, IntegerField, \
-    BooleanField
+    BooleanField, OneToOneField, CASCADE
+
+
+class Customer(Model):
+    user = OneToOneField(User, null=True, blank=True, on_delete=CASCADE)
+    name = CharField(max_length=70, null=True)
+    email = CharField(max_length=40, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Category(Model):
