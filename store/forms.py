@@ -14,6 +14,7 @@ class CategoryForm(ModelForm):
         fields = '__all__'
 
     name = CharField(widget=TextInput(attrs={'placeholder': 'Name of new category...'}),
+                     validators=[capitalized_validator],
                      max_length=30)
 
 
