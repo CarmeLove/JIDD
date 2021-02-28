@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
-from django.db.models import CharField, Model, DecimalField, ImageField, FloatField, ForeignKey, SET_NULL, IntegerField, \
-    BooleanField, OneToOneField, CASCADE, DateTimeField, F
+from django.db.models import CharField, Model, DecimalField, ImageField,\
+    FloatField, ForeignKey, SET_NULL, IntegerField, TextField, BooleanField,\
+    OneToOneField, CASCADE, DateTimeField, F
 
 
 class Customer(Model):
@@ -78,6 +79,7 @@ class Product(Model):
 
     name = CharField(max_length=70)
     category = ForeignKey(Category, on_delete=SET_NULL, null=True, blank=True)
+    description = TextField(max_length=700, null=False, blank=False, default='...')
     price = DecimalField(max_digits=6, decimal_places=2)
     availability = IntegerField(null=False, blank=False)
     weight = FloatField(null=True, blank=True)
