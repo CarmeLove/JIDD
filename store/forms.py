@@ -1,6 +1,6 @@
 from django.forms import *
 
-from .models import Category, ProductByWeight, ProductByQuantity
+from .models import Category, ProductByWeight, ProductByQuantity, Product
 
 
 class CategoryForm(ModelForm):
