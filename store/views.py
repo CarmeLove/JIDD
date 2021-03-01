@@ -11,6 +11,11 @@ def store(request):
     return render(request, 'store.html', context)
 
 
+def cart(request):
+    context = {}
+    return render(request, 'cart.html', context)
+
+
 class CategoryView(ListView):
     template_name = 'categories.html'
     model = Category
