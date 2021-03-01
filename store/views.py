@@ -7,7 +7,8 @@ from .forms import CategoryForm, ProductByWeightForm, ProductByQuantityForm
 
 
 def store(request):
-    context = {}
+    products = Product.objects.all()
+    context = {'products': products}
     return render(request, 'store.html', context)
 
 
