@@ -1,0 +1,17 @@
+<h1>Store</h1>
+    {% for product in products %}
+        <div>
+            <strong>{{ product.name }}</strong>
+            <p>{{ product.price|floatformat:2 }}</p>
+            <p>{{ product.availability }}</p>
+            <p>{{ product.weight }}</p>
+            <p>{{ product.availability }}</p>
+
+
+
+
+
+        </div>
+
+
+    {% endfor %}

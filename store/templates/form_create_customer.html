@@ -1,0 +1,6 @@
+<form method="POST" action="">
+    {% csrf_token %}
+    <p>Name: {{form.name}}</p>
+    <p>Email: {{form.email}}</p>
+    <p class="short-sub-form"><input type="submit" name="Create Account"></p>
+</form>

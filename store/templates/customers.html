@@ -1,0 +1,9 @@
+<h1>Customers</h1>
+<ul>
+    {% for customer in object_list %}
+    <li>
+        <img class="thumbnail" src="{{ product.imageURL }}">
+        {{ customer.user }} - {{ customer.name }} - {{ customer.email }}
+    </li>
+    {% endfor %}
+</ul>
